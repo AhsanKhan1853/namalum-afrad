@@ -1,0 +1,24 @@
+{% extends 'wallet/base.html' %}
+
+{% block title %}Welcome to PaisaHiPaisa{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <h1>Welcome to PaisaHiPaisa</h1>
+  <p>Use the links below to sign in, create an account, or continue to your role-specific dashboard.</p>
+</div>
+<div class="summary">
+  <div class="summary-card">
+    <h2>Start here</h2>
+    {% if not request.user.is_authenticated %}
+    <p>If you already have an account, <a href="{% url 'wallet:login' %}">login now</a>. Otherwise, <a href="{% url 'wallet:signup' %}">create a new account</a>.</p>
+    {% else %}
+    <p>You are logged in. <a href="{% url 'wallet:logout' %}">Logout</a> or <a href="{% if user.merchantprofile %}{% url 'wallet:merchant_dashboard' %}{% else %}{% url 'wallet:parent_dashboard' %}{% endif %}">go to your dashboard</a>.</p>
+    {% endif %}
+  </div>
+  <div class="summary-card">
+    <h2>Account types</h2>
+    <p>Sign up as a parent to access the parent dashboard, or as a merchant if your business is already registered.</p>
+  </div>
+</div>
+{% endblock %}
