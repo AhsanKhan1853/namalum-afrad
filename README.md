@@ -183,7 +183,7 @@ Photo-tap authentication for children who cannot read or remember PINs is novel 
 
 ## Team
 
-Built at **Micathon '26** by Microsoft Club GIKI.
+Built at **Micathon '26** by Na Malum Afraad.
 
 ---
 
